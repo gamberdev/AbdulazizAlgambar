@@ -1,4 +1,3 @@
-#Abdulaziz_Algambar_Portfoilio
 
 #[Freelancer | Contact Center Manager | Quality Service Leader |Call
 Center Trainer/Facilitator/Coach | Business Data Analyst | Network
