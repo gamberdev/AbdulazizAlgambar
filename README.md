@@ -1,8 +1,8 @@
 #Abdulaziz_Algambar_Portfoilio
 
-Freelancer | Contact Center Manager | Quality Service Leader |Call
+#[Freelancer | Contact Center Manager | Quality Service Leader |Call
 Center Trainer/Facilitator/Coach | Business Data Analyst | Network
-Engineer
+Engineer]
 Dammam, Eastern, Saudi Arabia
 Summary
 "Call center managers are the backbone of any organization offering
