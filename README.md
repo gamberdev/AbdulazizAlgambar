@@ -1,9 +1,10 @@
 
-#[Freelancer | Contact Center Manager | Quality Service Leader |Call
+#Freelancer | Contact Center Manager | Quality Service Leader |Call
 Center Trainer/Facilitator/Coach | Business Data Analyst | Network
 Engineer]
 Dammam, Eastern, Saudi Arabia
-Summary
+
+#Summary
 "Call center managers are the backbone of any organization offering
 customer service"
 Without their leadership and skillets, it would be impossible to
@@ -29,8 +30,10 @@ in 2021 by APEX.
 For more info or advice contact me:
 : azizalgambar@gmail.com
 ☁: https://www.linkedin.com/in/abdulazizalgambar/
-Page 1 of 4
-Experience
+
+
+
+#Experience
 Selfemployed
 Professional Freelancer
 June 2022 - Present (3 months)
@@ -40,9 +43,10 @@ customer service. Proven track record of quickly resolving customer inquiries
 and providing solutions that exceed customer expectations. Seeking an
 opportunity to use problem-solving skills and customer service experience to
 make a positive impact on an organization.
+
 SAUDI AIRLINES
 24 years 10 months
-Guest Care Center Manager DMM
+#Guest Care Center Manager DMM
 December 2021 - June 2022 (7 months)
 Dammam, Eastern, Saudi Arabia
 Strong digital skills and prior experience in running contact center platforms
@@ -66,8 +70,9 @@ journey with wow! factor.
 Contributing in transitioning to cloud-based contact center software (Genesys)
 that benefit in Increased scalability by 50%, ease of Remote Working and
 Improved customer experiences.
-Page 2 of 4
-Quality Assurance Leader
+
+
+#Quality Assurance Leader
 February 2019 - December 2021 (2 years 11 months)
 Dammam, Eastern, Saudi Arabia
 During installation of Genesys cloud project for Saudia, I was assigned to
@@ -79,7 +84,9 @@ Led (4) guest care center teams of Quality evaluators for Auditing that include
 more than 400 associates interactions in 4 contact centers for proper call
 handling and excellent customer service that impacted in improving quality
 levels from 20% to 86%+.
-Top5 Project Facilitator/Coach
+
+
+#Top5 Project Facilitator/Coach
 February 2019 - December 2021 (2 years 11 months)
 Al-Dammam Governorate, Saudi Arabia
 Directed more than 100 sales associates for an orientation to sales process,
@@ -91,7 +98,8 @@ Hours
 Coached 174 associates, 90 hours of coaching Sessions. leading to build a
 good customer retention and raising Customer Experience Surveys(CSAT,
 NPS)
-Snr Reservation statistical Call center analyst
+
+#[Snr Reservation statistical Call center analyst]
 September 1997 - February 2019 (21 years 6 months)
 Al-Dammam Governorate, Saudi Arabia
 I am the brain behind many business decisions. I collect, business data and
@@ -104,8 +112,9 @@ performance and evaluation decisions.
 Design and establish a database application to analyze statistical reports that
 assets in measuring contact center performance.
 Saudi Telecom Company
-Page 3 of 4
-Communications System Engineer
+
+
+#[Communications System Engineer]
 June 1996 - August 1997 (1 year 3 months)
 Al-Dammam Governorate, Saudi Arabia
 Designing and Implementing of local area network in STC sales department
@@ -116,7 +125,8 @@ more than 50 staff computers up and running properly.
 Developing and automating all admin routine paper work to using MS office
 application that bring great ease and flexibility to the creation and editing of
 documents among 10 departments and cut down paperwork by 75%..
-Education
+
+#[Education]
 King Fahd University of Petroleum & Minerals
 Bachelor's degree, Computer Engineering
-Page 4 of 
+
