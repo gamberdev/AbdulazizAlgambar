@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Dashboard</h3>
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">Today</div>
+      <div class="card-body">
+        <p>Date: <strong>{{ daily.date }}</strong></p>
+        <p>Appointments: <strong>{{ daily.count }}</strong></p>
+        <p>Total Sales: <strong>{{ '%.2f'|format(daily.total) }}</strong></p>
+        <a href="{{ url_for('routes.reports_view', day=daily.date) }}" class="btn btn-outline-primary btn-sm">View Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">This Month</div>
+      <div class="card-body">
+        <p>Year/Month: <strong>{{ monthly.year }}/{{ monthly.month }}</strong></p>
+        <p>Appointments: <strong>{{ monthly.count }}</strong></p>
+        <p>Total Sales: <strong>{{ '%.2f'|format(monthly.total) }}</strong></p>
+        <a href="{{ url_for('routes.reports_view', year=monthly.year, month=monthly.month) }}" class="btn btn-outline-primary btn-sm">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
