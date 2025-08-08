@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id            String        @id @default(cuid())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  firstName     String
+  lastName      String
+  phone         String        @unique
+  email         String?       @unique
+  notes         String?
+  isActive      Boolean       @default(true)
+  appointments  Appointment[]
+}
+
+model Service {
+  id            String        @id @default(cuid())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  name          String
+  description   String?
+  durationMin   Int           // minutes
+  priceCents    Int
+  isActive      Boolean       @default(true)
+  appointments  Appointment[]
+
+  @@index([isActive])
+}
+
+model Appointment {
+  id              String        @id @default(cuid())
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  startTime       DateTime
+  endTime         DateTime
+  status          AppointmentStatus @default(SCHEDULED)
+  notes           String?
+
+  customerId      String
+  serviceId       String
+
+  customer        Customer      @relation(fields: [customerId], references: [id])
+  service         Service       @relation(fields: [serviceId], references: [id])
+  notificationLog NotificationLog[]
+
+  @@index([startTime])
+  @@index([status])
+  @@unique([customerId, startTime, serviceId])
+}
+
+enum AppointmentStatus {
+  SCHEDULED
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+model Setting {
+  id           Int       @id @default(1)
+  businessName String
+  timezone     String    @default("UTC")
+  openHour     Int       @default(9)      // 0-23
+  closeHour    Int       @default(18)     // 0-23
+  slotMinutes  Int       @default(30)
+  whatsappFrom String?   // E.164 sender number
+}
+
+model NotificationLog {
+  id             String     @id @default(cuid())
+  createdAt      DateTime   @default(now())
+  type           NotificationType
+  toPhone        String
+  appointmentId  String
+  status         String
+  error          String?
+
+  appointment    Appointment @relation(fields: [appointmentId], references: [id])
+
+  @@index([toPhone])
+}
+
+enum NotificationType {
+  WHATSAPP_CONFIRMATION
+  WHATSAPP_REMINDER
+  WHATSAPP_CANCELLATION
+}
