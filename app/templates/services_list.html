@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Services</h3>
+  <a href="{{ url_for('routes.new_service') }}" class="btn btn-primary">New Service</a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Duration (min)</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for s in services %}
+    <tr>
+      <td>{{ s.name }}</td>
+      <td>{{ s.duration_minutes }}</td>
+      <td>{{ '%.2f'|format(s.price) }}</td>
+      <td>
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('routes.edit_service', service_id=s.id) }}">Edit</a>
+        <form method="post" action="{{ url_for('routes.delete_service', service_id=s.id) }}" class="d-inline" onsubmit="return confirm('Delete service?');">
+          <button class="btn btn-sm btn-outline-danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

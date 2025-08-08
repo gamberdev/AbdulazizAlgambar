@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Appointments</h3>
+  <a href="{{ url_for('routes.new_appointment') }}" class="btn btn-primary">New Appointment</a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date/Time</th>
+      <th>Customer</th>
+      <th>Service</th>
+      <th>Status</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in appointments %}
+    <tr>
+      <td>{{ a.start_datetime.strftime('%Y-%m-%d %H:%M') }}</td>
+      <td>{{ a.customer.name }}</td>
+      <td>{{ a.service.name }}</td>
+      <td>{{ a.status }}</td>
+      <td>{{ '%.2f'|format(a.get_effective_price()) }}</td>
+      <td>
+        <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('routes.edit_appointment', appointment_id=a.id) }}">Edit</a>
+        <form method="post" action="{{ url_for('routes.delete_appointment', appointment_id=a.id) }}" class="d-inline" onsubmit="return confirm('Delete appointment?');">
+          <button class="btn btn-sm btn-outline-danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

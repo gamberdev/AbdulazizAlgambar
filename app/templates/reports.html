@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Reports</h3>
+
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">Daily Report</div>
+      <div class="card-body">
+        <form class="row g-2" method="get">
+          <div class="col-auto">
+            <input type="date" class="form-control" name="day" value="{{ daily.date }}">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary">Go</button>
+          </div>
+        </form>
+        <hr/>
+        <p>Date: <strong>{{ daily.date }}</strong></p>
+        <p>Appointments: <strong>{{ daily.count }}</strong></p>
+        <p>Total Sales: <strong>{{ '%.2f'|format(daily.total) }}</strong></p>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+              <tr><th>Date/Time</th><th>Customer</th><th>Service</th><th>Status</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              {% for a in daily.appointments %}
+              <tr>
+                <td>{{ a.start_datetime.strftime('%Y-%m-%d %H:%M') }}</td>
+                <td>{{ a.customer.name }}</td>
+                <td>{{ a.service.name }}</td>
+                <td>{{ a.status }}</td>
+                <td>{{ '%.2f'|format(a.get_effective_price()) }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">Monthly Report</div>
+      <div class="card-body">
+        <form class="row g-2" method="get">
+          <div class="col-auto">
+            <input type="number" class="form-control" name="year" min="2000" max="2100" value="{{ monthly.year }}">
+          </div>
+          <div class="col-auto">
+            <input type="number" class="form-control" name="month" min="1" max="12" value="{{ monthly.month }}">
+          </div>
+          <div class="col-auto">
+            <button class="btn btn-primary">Go</button>
+          </div>
+        </form>
+        <hr/>
+        <p>Year/Month: <strong>{{ monthly.year }}/{{ monthly.month }}</strong></p>
+        <p>Appointments: <strong>{{ monthly.count }}</strong></p>
+        <p>Total Sales: <strong>{{ '%.2f'|format(monthly.total) }}</strong></p>
+        <div class="table-responsive">
+          <table class="table table-sm">
+            <thead>
+              <tr><th>Date/Time</th><th>Customer</th><th>Service</th><th>Status</th><th>Price</th></tr>
+            </thead>
+            <tbody>
+              {% for a in monthly.appointments %}
+              <tr>
+                <td>{{ a.start_datetime.strftime('%Y-%m-%d %H:%M') }}</td>
+                <td>{{ a.customer.name }}</td>
+                <td>{{ a.service.name }}</td>
+                <td>{{ a.status }}</td>
+                <td>{{ '%.2f'|format(a.get_effective_price()) }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
